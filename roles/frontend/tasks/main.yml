@@ -14,3 +14,4 @@
     src: "https://github.com/roboshop-devops-project/frontend/archieve/main.zip"
     dest: /tmp
     remote_src: yes
+

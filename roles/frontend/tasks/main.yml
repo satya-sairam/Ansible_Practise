@@ -1,0 +1,16 @@
+- name: Installing frontend
+  ansible.builtin.yum:
+    name: nginx
+    state: present
+    enabled: yes
+
+- name: delete old content
+  ansible.builtin.file:
+    src: /usr/share/nginx/html/
+    state: absent
+
+- name: Unarchive the downloaded content
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/frontend/archieve/main.zip"
+    dest: /tmp
+    remote_src: yes

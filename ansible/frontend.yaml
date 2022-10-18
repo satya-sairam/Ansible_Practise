@@ -1,0 +1,7 @@
+- name: Install Frontend
+  hosts: all
+  tags:
+    - Frontend
+  become: yes
+  roles:
+    - name: frontend

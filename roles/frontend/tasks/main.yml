@@ -23,7 +23,7 @@
 
 - name: copy the roboshop conf
   ansible.builtin.copy:
-    src: /tmp/frontend-main/static/
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
 - name: start the nginx service

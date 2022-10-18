@@ -15,3 +15,19 @@
     dest: /tmp
     remote_src: yes
 
+- name: copy the content from temp to nginx conf location
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
+  remote_src: yes
+
+- name: copy the roboshop conf
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: start the nginx service
+  ansible.builtin.systemd:
+    name: nginx
+    state: started
+    enabled: yes
